@@ -97,88 +97,96 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: StaggeredGridView.countBuilder(
                     crossAxisCount: 4,
                     itemCount: 18,
-                    itemBuilder: (BuildContext context, int index) {
-                      return ElevatedButton(
-                        style: index != 15
-                            ? ElevatedButton.styleFrom(
-                                shape: CircleBorder(),
-                                shadowColor: Colors.greenAccent.shade400,
-                                elevation: 7,
-                                side: BorderSide(
-                                    color: Colors.deepPurple.shade800,
-                                    width: 7),
-                              )
-                            : ElevatedButton.styleFrom(
-                                shadowColor: Colors.greenAccent.shade400,
-                                elevation: 7,
-                                side: BorderSide(
-                                    color: Colors.deepPurple.shade800,
-                                    width: 8),
-                              ),
-                        onPressed: () {
-                          final op = options[index];
-                          if (options[index] == '=') {
-                            operation = separatesFunctionIntoSmallerFunctions(
-                                operation, '*', '/');
-                            operation = separatesFunctionIntoSmallerFunctions(
-                                operation, '-', '+');
-                          } else {
-                            operation += options[index];
-                          }
+                    itemBuilder: (BuildContext context, int index) =>
+                        ElevatedButton(
+                      style: index == 16
+                          ? ElevatedButton.styleFrom(
+                              shadowColor: Colors.greenAccent.shade400,
+                              elevation: 7,
+                              shape: StadiumBorder(),
+                              side: BorderSide(
+                                  color: Colors.deepPurple.shade800, width: 8),
+                            )
+                          : index == 15
+                              ? ElevatedButton.styleFrom(
+                                  shadowColor: Colors.greenAccent.shade400,
+                                  elevation: 7,
+                                  shape: StadiumBorder(),
+                                  side: BorderSide(
+                                      color: Colors.deepPurple.shade800,
+                                      width: 8),
+                                )
+                              : ElevatedButton.styleFrom(
+                                  shape: CircleBorder(),
+                                  shadowColor: Colors.greenAccent.shade400,
+                                  elevation: 7,
+                                  side: BorderSide(
+                                      color: Colors.deepPurple.shade800,
+                                      width: 7),
+                                ),
+                      onPressed: () {
+                        final op = options[index];
+                        if (options[index] == '=') {
+                          operation = separatesFunctionIntoSmallerFunctions(
+                              operation, '*', '/');
+                          operation = separatesFunctionIntoSmallerFunctions(
+                              operation, '-', '+');
+                        } else {
+                          operation += options[index];
+                        }
 
-                          switch (op) {
-                            case "C":
-                              {
-                                a = null;
-                                b = null;
-                                result = 0.0;
-                                operation = "";
-                                break;
-                              }
-                            case "+":
-                              {
-                                currentOp = op;
-                                break;
-                              }
-                            case "-":
-                              {
-                                currentOp = op;
-                                break;
-                              }
-                            case "*":
-                              {
-                                currentOp = op;
-                                break;
-                              }
-                            case "/":
-                              {
-                                currentOp = op;
-                                break;
-                              }
-                            case "=":
-                              {
-                                break;
-                              }
-                          }
+                        switch (op) {
+                          case "C":
+                            {
+                              a = null;
+                              b = null;
+                              result = 0.0;
+                              operation = "";
+                              break;
+                            }
+                          case "+":
+                            {
+                              currentOp = op;
+                              break;
+                            }
+                          case "-":
+                            {
+                              currentOp = op;
+                              break;
+                            }
+                          case "*":
+                            {
+                              currentOp = op;
+                              break;
+                            }
+                          case "/":
+                            {
+                              currentOp = op;
+                              break;
+                            }
+                          case "=":
+                            {
+                              break;
+                            }
+                        }
 
-                          setState(() {});
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.deepPurple),
-                          child: Text(
-                            options[index],
-                            style: GoogleFonts.pressStart2p(
-                              textStyle: TextStyle(
-                                  color: (index == 15
-                                      ? Colors.green.shade300
-                                      : Colors.lightGreenAccent.shade400),
-                                  fontSize: 33),
-                            ),
+                        setState(() {});
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle, color: Colors.deepPurple),
+                        child: Text(
+                          options[index],
+                          style: GoogleFonts.pressStart2p(
+                            textStyle: TextStyle(
+                                color: (index == 15
+                                    ? Colors.green.shade300
+                                    : Colors.lightGreenAccent.shade400),
+                                fontSize: 33),
                           ),
                         ),
-                      );
-                    },
+                      ),
+                    ),
                     staggeredTileBuilder: (int index) {
                       if (index == 15) {
                         return StaggeredTile.count(1, 2);
