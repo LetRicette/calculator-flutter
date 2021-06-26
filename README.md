@@ -1,16 +1,29 @@
-# calculator
+# **Assignments - LevelUp2**
 
-A new Flutter project.
+######                                  				Raro Academy - Flutter
 
-## Getting Started
+<img src=".\207136041_568406227666792_2912089205508553230_n.png" style="zoom: 80%;" />
 
-This project is a starting point for a Flutter application.
+**LevelUp2**  
 
-A few resources to get you started if this is your first Flutter project:
+Interface de uma calculadora utilizando os tópicos aprendidos na 2° semana de aula:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+- Personalização botões;
+
+- Utilização de GridView;
+
+- Manipulação de Container;
+
+- Criando a lógica da aplicação (a lógica desenvolvida durante as aulas);
+
+- Trocando o estado da Aplicação
+
+  
+
+
+
+
+
+Aplicação no emulador android- Pixel 2.
